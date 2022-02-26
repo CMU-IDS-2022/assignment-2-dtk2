@@ -248,6 +248,7 @@ worldpop = alt.Chart(waterdf).mark_bar().encode(
     select_year2
 ).properties(
     height= 250)
+
 st.write(alt.concat(
     (worldpop | NCSM)& (NCNP | NCP)
 ).resolve_scale(
@@ -260,22 +261,20 @@ st.caption("Performance by Nations in Delivering Safely Managed Drinking Water t
     
 #########################################################################################################################    
     
-## PART B - SANITATION  
-#Correlation Matrix
+## PART B - SANITATION 
+st.header("3. Sanitation")
+## THE SANITATION CORRELATION MATRIX
+st.write("This text introduces the topic")
+ 
 sanit_cor_data = (sanitdf[['BASIC_SAN_NAT', 	'LIMITED_SHARED_SAN_NAT', 	'UNIMPROVED_SAN_NAT', 	'OPENDEFECATION_SAN_NAT', 	'SAFELYMANAGED_SAN_NAT', 	'DISPOSED_INSITU_SAN_NAT', 	'EMP_TREAT_SAN_NAT', 	
                     'WW_TREATED_SAN_NAT', 	'LATRINES_SAN_NAT', 	'SEPTICTANKS_SAN_NAT', 'SEWERCONNECTION_SAN_NAT']]
             ).corr().stack().reset_index().rename(columns={0: 'correlation', 'level_0': 'variable1', 'level_1': 'variable2'})
-
 sanit_cor_data['correlation_label'] = sanit_cor_data['correlation'].map('{:.2f}'.format)  # Round to 2 decimal
-#print(cor_data)
-
 s_base = alt.Chart(sanit_cor_data).encode(
     x='variable2:O',
     y='variable1:O'    
 )
 
-# Text layer with correlation labels
-# Colors are for easier readability
 text = s_base.mark_text().encode(
     text='correlation_label',
     color=alt.condition(
@@ -284,81 +283,23 @@ text = s_base.mark_text().encode(
         alt.value('white')
     )
 )
-
 # The correlation heatmap
 sanit_cor_plot = s_base.mark_rect().encode(
     color=alt.Color('correlation:Q', scale=alt.Scale(scheme='plasma'))
 ).properties(
-    width=500,
+    width=700,
     height=500,
     title = "The Correlation Matrix: Sanitation"
 )
-sanit_cor_plot + text
+st.write(sanit_cor_plot + text)
+st.caption("Correlation Matrix for Sanitation Feature Data")
 
 
-
-s_slider = alt.binding_range(min=2000, max=2020, step=1, name='YEAR')
-s_select_year = alt.selection_single(name="YEAR", fields=['YEAR'],
-                                   bind=s_slider, init={'YEAR': 2000})
-
-
-s_popsdgchart = alt.Chart(sanitdf).mark_bar(tooltip=True).encode(
-    
-    y = alt.Y('POP_THOUS',
-              axis=alt.Axis(title='Population in Thousands'), sort='-x',
-              scale=alt.Scale(domain=(0, 2400000))),
-    
-    x = alt.X('SDG region:O',
-              axis=alt.Axis(title='SDG Regions'), 
-              scale=alt.Scale(zero=False), sort='y'
-              ),
-              
-    color= alt.Color('COUNTRY:O', legend = None, scale=alt.Scale(scheme='plasma'))
-).properties(
-    width = 300,
-    height = 400,
-     title="Population (2000-2020): SDG Regions"
-).transform_filter(
-    s_select_year
-).add_selection(
-    s_select_year
-)
-
-s_popyearchart = alt.Chart(sanitdf).mark_bar(tooltip=True).encode(
-    
-    y = alt.Y('POP_THOUS',
-              axis=alt.Axis(title='Population in Thousands'), sort='-x',
-              scale=alt.Scale(domain=(0, 1600000))),
-                  
-    x = alt.X('COUNTRY:O',
-              axis=alt.Axis(title='COUNTRY'), 
-              scale=alt.Scale(zero=False), sort='-y'
-              ),  
-    color= alt.Color('COUNTRY', legend = None, scale=alt.Scale(scheme='plasma'))
-).transform_filter(
-    s_select_year
-).add_selection(
-    s_select_year
-).transform_filter(
-    alt.datum.POP_THOUS > 40000
-).properties(
-    width = 400,
-    height = 400,
-    title="Population (2000-2020): World Nations"
-)
-###
-
-alt.concat(
-    s_popsdgchart, s_popyearchart
-).resolve_scale(
-    color='independent'
-).configure_view(
-    stroke=None
-)
+## CLASSIFICATION OF SANITATION SEWERAGE INFRASTRUCTURE/ METHODS
+st.header("3.1. Classification of Sewerage Infrastructure/ Methods")
+st.write("This text introduces the topic")
 
 s_selection = alt.selection_single(fields=['YEAR','COUNTRY'])
-
-###
 sewerconnectionchart = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
     x=alt.X('YEAR:O',axis=alt.Axis(title='Year')),
     y=alt.Y('SEWERCONNECTION_SAN_NAT', axis=alt.Axis(title='% Population with Sewerage Connections')),
@@ -369,38 +310,38 @@ sewerconnectionchart = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
 ).add_selection(s_selection).encode(
     color=alt.condition(s_selection, "COUNTRY", alt.value("grey"), legend=None, scale=alt.Scale(scheme='plasma')),
    ).properties(
-     title="Beads Chart: Proportional State of Sewerage Connections",
-     width=800
+     title="Increase in Underground Sewerage Over Time",
+     width=400
 )
-###
-
 s_nationpie = alt.Chart(sanitpie_melt).mark_arc().encode(
     theta=alt.Theta(field='mean_value', type="quantitative"),
     color=alt.Color('variable', scale=alt.Scale(scheme='plasma')),
-    tooltip=('variable:O', 'mean_value:Q', 'COUNTRY:O', 'YEAR:O')
+    tooltip=('variable:O', 'mean_value:Q')
 ).transform_filter(
     s_selection
 ).transform_aggregate(
     mean_value='mean(value):Q',
     groupby=["variable"]
 ).properties(
-    title="Sewerage Connecions"
+    title="Disposal Method of Sanitary Waste"
 )
-
-alt.hconcat(
+st.write(alt.hconcat(
     sewerconnectionchart , s_nationpie
 ).resolve_scale(
     color='independent'
 ).configure_view(
     stroke=None
-)
+))
+st.caption("Increase in Underground Sewerage (left) and Type of Disposal of Sanitary Waste (right) (Interactive)")
 
+## PERFORMANCE OF COUNTRIES IN DELIVERING NONCONTAMINATED DRINKING WATER
+st.header("3.2. Performance by Nations in Safe Collection and Disposal of Sanitary Wastewater from its Citizens")
+st.write("This text introduces the topic")
 s_slider = alt.binding_range(min=2000, max=2020, step=1, name='YEAR')
 s_select_year = alt.selection_single(name="YEAR", fields=['YEAR'],
                                    bind=s_slider, init={'YEAR': 2000})
 ## WTSM WW Treated vs. Safely Managed
 WTSF = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
-    
     x = alt.X('SAFELYMANAGED_SAN_NAT'),
     y = alt.Y('WW_TREATED_SAN_NAT'),
     color=alt.Color('SDG region:O',scale=alt.Scale(scheme='plasma')),
@@ -410,10 +351,11 @@ WTSF = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
     s_select_year
 ).add_selection(
     s_select_year
-)
+).properties(
+    width=500,
+    height=250)
 ## WTOD WW Treated vs. Open Defecation
 WTOD = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
-    
     x = alt.X('OPENDEFECATION_SAN_NAT'),
     y = alt.Y('WW_TREATED_SAN_NAT'),
     color=alt.Color('SDG region:O',scale=alt.Scale(scheme='plasma')),
@@ -423,7 +365,9 @@ WTOD = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
     s_select_year
 ).add_selection(
     s_select_year
-)
+).properties(
+    width=250,
+    height=250)
 ## SWC WW Treated vs. Sewer Connection 
 WTSC = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
     
@@ -436,7 +380,9 @@ WTSC = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
     s_select_year
 ).add_selection(
     s_select_year
-)
+).properties(
+    width=250,
+    height=250)
 
 s_worldpop = alt.Chart(sanitdf).mark_bar().encode(
     x="YEAR:O",
@@ -447,20 +393,18 @@ s_worldpop = alt.Chart(sanitdf).mark_bar().encode(
     s_select_year
 ).add_selection(
     s_select_year
-)
+).properties(
+    height=250)
 
-alt.hconcat(
-    s_worldpop, WTSF , WTOD, WTSC
+st.write(alt.concat(
+    (s_worldpop | WTSF) & (WTOD | WTSC)
 ).resolve_scale(
     color='shared'
 ).configure_view(
     stroke=None
-)
+))
+    
 
-alt.Chart(sanitdf).mark_bar().encode(
-    x="YEAR:O",
-    y="sum(POP_THOUS):Q",
-    color=alt.Color('YEAR', scale=alt.Scale(scheme='plasma')),
-    #tooltip = 
-)
+
+
 st.markdown("This project was created by Tanay Kulkarni and Devashri Karve for the [Interactive Data Science](https://dig.cmu.edu/ids2022) course at [Carnegie Mellon University](https://www.cmu.edu).")
