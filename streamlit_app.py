@@ -5,6 +5,8 @@ import altair as alt
 import streamlit as st
 alt.data_transformers.disable_max_rows()
 from IPython.display import Image
+from IPython.display import display, HTML
+
 
 st.title("Data Visualization, Sustainable Development Goal: Clean Water & Sanitation")
 
@@ -20,14 +22,14 @@ waterdf = waterdf.dropna(subset=['POP_THOUS'])
 print(waterdf.shape)
 waterdf.isnull().sum()
 
-waterdf.describe()
+
 
 waterdf['POP_THOUS'] = waterdf['POP_THOUS'].str.replace(' ', '')
 waterdf['POP_THOUS'] = waterdf['POP_THOUS'].astype(int)
 
 
-waterdf.head()
-
+print(waterdf.head())
+print(waterdf.describe())
 
 st.write(Image('https://unstats.un.org/sdgs/assets/img/sliders/2017-Regions-E-large.png'))
 
@@ -93,8 +95,8 @@ popsdgchart = alt.Chart(waterdf).mark_bar(tooltip=True).encode(
               
     color= alt.Color('COUNTRY:O', legend = None, scale=alt.Scale(scheme='plasma'))
 ).properties(
-    width = 400,
-    height = 400,
+    width = 300,
+    height = 300,
     title="Population (2000-2020): SDG Regions"
 ).transform_filter(
     select_year1
@@ -120,8 +122,8 @@ popyearchart = alt.Chart(waterdf).mark_bar(tooltip=True).encode(
 ).transform_filter(
     alt.datum.POP_THOUS > 40000
 ).properties(
-    width = 400,
-    height = 400,
+    width = 300,
+    height = 300,
     title="Population (2000-2020): World Nations"
 )
 ###
@@ -150,7 +152,7 @@ pipedwaterchart = alt.Chart(waterdf).mark_circle(opacity=0.9).encode(
     color=alt.condition(selection, "COUNTRY", alt.value("grey"), legend=None, scale=alt.Scale(scheme='plasma'))
 ).properties(
     title="Increase in Access to Piped Water Connections over Time",
-    width=800
+    width=400
 )
 ###
 
@@ -180,6 +182,8 @@ st.altair_chart(chart_pie)
 slider2 = alt.binding_range(min=2000, max=2020, step=1, name='YEAR')
 select_year2 = alt.selection_single(name="YEAR", fields=['YEAR'],
                                    bind=slider2, init={'YEAR': 2000})
+
+
 ## NSCM - Non Contaminated VS Safely Managed
 NCSM = alt.Chart(waterdf).mark_circle(opacity=0.9).encode(
     
@@ -193,7 +197,9 @@ NCSM = alt.Chart(waterdf).mark_circle(opacity=0.9).encode(
 ).add_selection(
     select_year2
 ).properties(
-    title="Safely Managed Non Contaminated Drinking Water"
+    title="Safely Managed Non Contaminated Drinking Water",
+    width = 300,
+    height = 300
 )
 ## NCNP Non Contaminated VS NON Piped
 NCNP = alt.Chart(waterdf).mark_circle(opacity=0.9).encode(
@@ -208,7 +214,9 @@ NCNP = alt.Chart(waterdf).mark_circle(opacity=0.9).encode(
 ).add_selection(
     select_year2
 ).properties(
-    title="Non Piped Access to Non Contaminated Drinking Water"
+    title="Non Piped Access to Non Contaminated Drinking Water",
+    width = 300,
+    height = 300,
 )
 ## NCP Non Contaminated VS Piped
 NCP = alt.Chart(waterdf).mark_circle(opacity=0.9).encode(
@@ -223,7 +231,9 @@ NCP = alt.Chart(waterdf).mark_circle(opacity=0.9).encode(
 ).add_selection(
     select_year2
 ).properties(
-    title="Piped Access to Non Contaminated Drinking Water"
+    title="Piped Access to Non Contaminated Drinking Water",
+    width = 300,
+    height = 300,
 )
 
 worldpop = alt.Chart(waterdf).mark_bar().encode(
@@ -237,8 +247,8 @@ worldpop = alt.Chart(waterdf).mark_bar().encode(
     select_year2
 )
 
-st.altair_chart(alt.hconcat(
-    worldpop, NCSM , NCNP, NCP
+st.write(alt.concat(
+    (worldpop | NCSM | NCNP) & NCP
 ).resolve_scale(
     color='shared'
 ).configure_view(
