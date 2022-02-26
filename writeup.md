@@ -17,10 +17,11 @@ This goals of this project are:
 ## Design
 
 TODO: **A rationale for your design decisions.** How did you choose your particular visual encodings and interaction techniques? What alternatives did you consider and how did you arrive at your ultimate choices?
--Section 1 World Population Growth: Population is an important and consistently growing parameter on which, developement largely depends. This section shows a pair of histograms depicting population growth in different countries and different SDG Regions in the the world between from the year 2000 to 2020. The slider provided to visualize the changes in population shows real-time comparison of the same, over the years.
--Section 2 Clean Water
--Section 2.1 Correlation between parameters: The data obtained has 10 different parameters. To visualize the correlation (connection) between these parameters, a correlation matrix is plotted. Many parameters show strong correlation among themselves. The SDG is to ensure clean drinking water, hence the most important parameter is 'Non Contaminated Water', which shows significantly high correlation with the 'Piped Water'. This indicates that as the piped water networks increase, the delivery of non-contaminated water increases. 
--Section 2.2  
+- Section 1 World Population Growth: Population is an important and consistently growing parameter on which, developement largely depends. This section shows a pair of histograms depicting population growth in different countries and different SDG Regions in the the world between from the year 2000 to 2020. The slider provided to visualize the changes in population shows real-time comparison of the same, over the years.
+- Section 2 Clean Water
+- Section 2.1 Correlation between parameters: The data obtained has 10 different parameters. To visualize the correlation (connection) between these parameters, a correlation matrix is plotted. Many parameters show strong correlation among themselves. The SDG is to ensure clean drinking water, hence the most important parameter is 'Non Contaminated Water', which shows significantly high correlation with the 'Piped Water'. This indicates that as the piped water networks increase, the delivery of non-contaminated water increases.
+- Section 2.2
+
 
 
  
