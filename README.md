@@ -1,7 +1,8 @@
 # CMU Interactive Data Science Assigment 2
 
 * **Team members**: tskulkar@andrew.cmu.edu and dkarve@andrew.cmu.edu 
-* **Online URL**: https://share.streamlit.io/cmu-ids-2022/assignment-2-dtk2/master/streamlit_app.py (Update YYYY with your repo name)
+* **Online URL**: https://share.streamlit.io/cmu-ids-2022/assignment-2-dtk2/master/streamlit_app.py 
+* **Repository**:https://github.com/CMU-IDS-2022/assignment-2-dtk2
 
 ## Instructions
 
