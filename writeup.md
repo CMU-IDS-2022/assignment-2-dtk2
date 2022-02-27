@@ -3,7 +3,7 @@
 ![image](https://user-images.githubusercontent.com/98185275/155863655-ae677235-9eee-4ce5-860c-581fa1dbb03b.png)
 
 
-United Nations has gloabally designed several Sustainable Developement Goals(SDGs) as actions to end poverty, protect the planet and ensure peace and prosperity for human beings. SDGs are the extensions of Millenium Developement Goals(MDGs), which were started in the year 2000 to serve the same purpose. SDG-6 is to ensure availability and sustainable management of water and sanitation for all. This project analyzes overall developement of countries around the world, towards safely managing drinking water and sanitation. 
+United Nations has gloabally designed several Sustainable Developement Goals(SDGs) as actions to end poverty, protect the planet and ensure peace and prosperity for human beings. SDGs are the extensions of Millenium Developement Goals(MDGs), which were started in the year 2000 to serve the same purpose. SDG-6 is to ensure availability and safe and sustainable management of water and sanitation for all. This project analyzes overall developement of countries around the world, towards safely managing drinking water and sanitation. 
 
 ## Project Goals
 
