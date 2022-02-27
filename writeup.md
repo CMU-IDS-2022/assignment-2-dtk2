@@ -1,6 +1,6 @@
 # United Nations' Sustainable Development Goal 6: Clean Water and Sanitation
 
-![image](https://user-images.githubusercontent.com/98185275/155860179-b8936965-f264-4458-9212-88e58f5d045f.png)
+![image](https://user-images.githubusercontent.com/98185275/155863655-ae677235-9eee-4ce5-860c-581fa1dbb03b.png)
 
 TODO: Update screenshot
 
@@ -9,9 +9,9 @@ United Nations has gloabally designed several Sustainable Developement Goals(SDG
 ## Project Goals
 
 This goals of this project are:
-- To analyze different aspects and parameters that govern safety in drinking water and sanitation.
-- To analyze developement in managing drinking water and sanitation in the worlds, over past 20 years.
-- To isualize the population growth vs. developement over the period.
+- Exploratory analysis of different aspects and parameters that govern safety in drinking water and sanitation.
+- Analysis of developement in managing drinking water and sanitation in the worlds, over past 20 years.
+- Exploraatory visualize of the population growth vs. developement over the period.
 
 
 ## Design
