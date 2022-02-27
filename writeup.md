@@ -3,7 +3,7 @@
 ![image](https://user-images.githubusercontent.com/98185275/155863655-ae677235-9eee-4ce5-860c-581fa1dbb03b.png)
 
 ## Team
-Tanay Kulkarni and Devashri Karve are graduate students at the Department of Civil and Environmental Engineering at CMU. They both are the founders of DTK Hydronet Solutions (www.dtkhydronet.com) - a multi-awards winning startup that focuses on developing digital solutions around water infrastructure systems ensuring delivery of clean water to millions.
+Tanay Kulkarni and Devashri Karve are graduate students at the Department of Civil and Environmental Engineering at CMU. They both are the founders of DTK Hydronet Solutions (www.dtkhydronet.com) - a startup that focuses on developing digital solutions around water infrastructure systems.
 
 ## Motivation
 United Nations has gloabally designed several Sustainable Developement Goals(SDGs) as actions to end poverty, protect the planet and ensure peace and prosperity for human beings. SDGs are the extensions of Millenium Developement Goals(MDGs), which were started in the year 2000 to serve the same purpose. SDG-6 is to ensure availability and safe and sustainable management of water and sanitation for all. This project analyzes overall developement of countries around the world, towards safely managing drinking water and sanitation. 
