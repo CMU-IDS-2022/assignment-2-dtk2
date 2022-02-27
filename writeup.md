@@ -9,8 +9,8 @@ United Nations has gloabally designed several Sustainable Developement Goals(SDG
 
 This goals of this project are:
 - Exploratory analysis of different aspects and parameters that govern safety in drinking water and sanitation.
-- Analysis of developement in managing drinking water and sanitation in the worlds, over past 20 years.
-- Exploraatory visualize of the population growth vs. developement over the period.
+- Analysis of developement in managing drinking water and sanitation in the world, over past 20 years.
+- Correlational Exploratory Visualization of several important features to understand a trend and direction in which the world nations are headed.
 
 
 ## Design
