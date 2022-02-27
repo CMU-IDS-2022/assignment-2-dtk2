@@ -1,4 +1,4 @@
-# Project name Analysis of SDG-6 for the period of 20 years.
+# United Nations' Sustainable Development Goal 6: Clean Water and Sanitation
 
 ![image](https://user-images.githubusercontent.com/98185275/155860179-b8936965-f264-4458-9212-88e58f5d045f.png)
 
