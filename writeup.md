@@ -27,9 +27,12 @@ TODO: **A rationale for your design decisions.** How did you choose your particu
 
 ## Development
 
-TODO: **An overview of your development process.** Describe how the work was split among the team members. Include a commentary on the development process, including answers to the following questions: Roughly how much time did you spend developing your application (in people-hours)? What aspects took the most time?
-- The data is obtained from https://data.un.org/ as a CSV. The preliminary inspection and understanding the data was carried out in Microsoft Excel. However, the data cleaning (removing NA values, changing data types of variables as per the requirement, etc) and processing was done using Python.   
+**An overview of your development process.** Describe how the work was split among the team members. Include a commentary on the development process, including answers to the following questions: Roughly how much time did you spend developing your application (in people-hours)? What aspects took the most time?
+- The data is obtained from https://data.un.org/ as a CSV. The preliminary inspection and understanding the data was carried out in Microsoft Excel. However, the data cleaning (removing NA values, changing data types of variables as per the requirement, etc) and processing was done using Python. 
+- As both the team members are relatively new to programming, we both were involved in data cleaning (using Python) and in developing the code. It helped us support each other as well as learn many new things together. The write-up is also done by both. 
+- Overall, this assignment took 10 days, approximately 4 hr/person/day.
+- Deploying the app on streamlit and generating the results on it took comparitively more time. Especially, deploying **Slider** was a lengthy process as we encountered most challanges in it. The Year data/graphs did not show for the sliders in streamlit. Eventually, we leaned that the slider needs 'float' type data, and not 'integer'.
 
 ## Success Story
 
-TODO:  **A success story of your project.** Describe an insight or discovery you gain with your application that relates to the goals of your project.
+**A success story of your project.** Describe an insight or discovery you gain with your application that relates to the goals of your project.
