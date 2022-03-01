@@ -108,13 +108,14 @@ st.altair_chart(popgrowth, use_container_width=True)
 st.caption("Growth in World's Population over Time (2000-2020) (Interactive)")
 st.write("The world population grew exponentially from around 6 Billion in 2000 to about 8 Billion by 2020! This steep rise in population put great stress on the world economies to ensuring clean potable drinking water and safe sanitation to each and every human being on the planet. Population is an important and consistently growing parameter on which, developement of any nation largely depends. This section shows a pair of histograms depicting population growth in different countries and different SDG Regions in the the world between from the year 2000 to 2020. ")
 st.write("**Interactivity Guide:** Move the slider, hover on the bars to view more details...")
-
+st.subheader("***🔑 Key Insight***")
+st.write("*Notice the steep 30% increase in India's population. Compare it with China's and USA's population over the past 20 years!*")
 
 ## PART A - CLEAN WATER
 st.header("2. Clean Water")
 
 ## THE WATER CORRELATION MATRIX
-st.write("The data obtained has 10 different parameters. To visualize the correlation (connection) between these parameters, a correlation matrix is plotted. Many parameters show strong correlation among themselves.")
+st.write("The data obtained has 10 different parameters [Link to Variable Dictionary](https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-dtk2/f367084a4fef6684455252465e3bd7f6e9ae9a67/Dictionary%20-%20water.csv). To visualize the correlation (connection) between these parameters, a correlation matrix is plotted. Many parameters show strong correlation among themselves.")
 
 # THE MATRIX
 cor_data = (waterdf[['BASIC_WAT_NAT', 	'LIMITED_WAT_NAT', 	'UNIMPROVED_WAT_NAT', 	'SURFACE_WAT_NAT', 	'SAFELY_MANAGED_NAT', 	'ACCESS_ONPREMISE_NAT', 	'AVAIL_WHEN_NEEDED_NAT', 	
@@ -189,6 +190,8 @@ st.altair_chart(chart_pie)
 st.caption("Increase in Access to Piped Drinking Water (left) and Type of Access to Drinking Water (right) (Interactive)")
 st.write("**Interactivity Guide:** Hover/ Click the 'Country' beads to see the pie change adaptively for the selected Country and Year. To deselect click on whitespace...")
 st.write("As we hover over the graph, the tooltip (cursor) shows name of the country of a particular data point. Single Selection which acts as a dynamic query filter, enables user to click on any point and disaply its details on-demand in the form of a pie chart, alongside. The pie chart shows the accessability to Basic, Limited, Unimproved or Surface water in each country. This gives overall idea of the country's water infrastructure.")
+st.subheader("***🔑 Key Insight***")
+st.write("*Notice how China enhances delivery of drinking water to 80% of its people with Piped Water Connections in 2020 from a 50% in 2000. India clearly needs to improve its delivery through piped water connectivity. This is a clear indication why the Indian Government started heavily investing in schemes like 'Jal Jeevan Mission' (https://jaljeevanmission.gov.in/) that envisions to provide safe and adequate drinking water through individual household tap connections by 2024 to all households in rural India.*")
 
 
 ## PERFORMANCE OF COUNTRIES IN DELIVERING NONCONTAMINATED DRINKING WATER
@@ -230,9 +233,9 @@ NCNP = alt.Chart(waterdf).mark_circle(opacity=0.9).encode(
     width = 250,
     height = 250,
 )
-## NCP Non Contaminated VS Piped
+## NCAWN Non Contaminated VS Availability When Needed
 NCP = alt.Chart(waterdf).mark_circle(opacity=0.9).encode(  
-    x = alt.X('PIPED_NAT',),
+    x = alt.X('AVAIL_WHEN_NEEDED_NAT',),
     y = alt.Y('NON_CONTAMIN_NAT'),
     color=alt.Color('SDG region:O',scale=alt.Scale(scheme='plasma')),
     size='POP_THOUS:Q',
@@ -242,7 +245,7 @@ NCP = alt.Chart(waterdf).mark_circle(opacity=0.9).encode(
 ).add_selection(
     select_year2
 ).properties(
-    title="Piped Access to Non Contaminated Drinking Water",
+    title="Availability of Non Contaminated Drinking Water When Needed",
     width = 250,
     height = 250,
 )
@@ -267,14 +270,19 @@ st.write(alt.concat(
 )
 )
 st.caption("Performance by Nations in Delivering Safely Managed Drinking Water to its Citizens(Interactive)")
-st.write("**Interactivity Guide:** Move the slider to and fro to visualize.")
+st.write("**Interactivity Guide:** Move the slider to and fro to visualize. Hover on the circles to identify the country.")
 st.write("For most of the countries, the parameters in all the three graphs show clear relation. Non-Contaminated water increases as the Safe management of water increases. Non-piped water increases/decreases, Non-contaminated water decreases/increases. Non-contaminated water increases as Pipe water increases.")
+st.subheader("***🔑 Key Insight***")
+st.write("*While most of the countries in the World are improving their water infrastructure systems, these charts help us identify the countries with poor development or the ones that need drastic positive changes. Notice Pakistan (near (x=40,y=40)) moving in opposite direction as compared to the rest of world indicating it has failed to provide any improvement in delivering non-contaminated safely managed clean drinking water to its citizens. The lower left chart shows Pakistan, Nigeria, and Ethiopia witnessed increase in proportion of its people having non-piped access to fairly contaminated drinking water. The lower right chart shows that Ethiopia and Nigeria ensured improvement in availability of water when its needed to its citizens but the quality of water fairly contaminated, whereas Pakistan couldn't ensure any development in both the parameters.*")
+
+
+
 #########################################################################################################################    
     
 ## PART B - SANITATION 
 st.header("3. Sanitation")
 ## THE SANITATION CORRELATION MATRIX
-st.write("Sanitatary waste-water systems have been a tremendously neglected infrastructure, especially in the developing and under-developed countries. The data obtained has 11 different parameters. To visualize the correlation (connection) between these parameters, a correlation matrix is plotted. A couple of parameters show strong correlation among themselves.")
+st.write("Sanitatary waste-water systems have been a tremendously neglected infrastructure, especially in the developing and under-developed countries. The data obtained has 11 different parameters [Link to Variable Dictionary](https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-dtk2/f367084a4fef6684455252465e3bd7f6e9ae9a67/Dictionary%20-%20sanitary.csv). To visualize the correlation (connection) between these parameters, a correlation matrix is plotted. A couple of parameters show strong correlation among themselves.")
  
 sanit_cor_data = (sanitdf[['BASIC_SAN_NAT', 	'LIMITED_SHARED_SAN_NAT', 	'UNIMPROVED_SAN_NAT', 	'OPENDEFECATION_SAN_NAT', 	'SAFELYMANAGED_SAN_NAT', 	'DISPOSED_INSITU_SAN_NAT', 	'EMP_TREAT_SAN_NAT', 	
                     'WW_TREATED_SAN_NAT', 	'LATRINES_SAN_NAT', 	'SEPTICTANKS_SAN_NAT', 'SEWERCONNECTION_SAN_NAT']]
@@ -345,6 +353,11 @@ st.write(alt.hconcat(
 st.caption("Increase in Underground Sewerage (left) and Type of Disposal of Sanitary Waste (right) (Interactive)")
 st.write("**Interactivity Guide:** Hover/ Click the 'Country' beads to see the pie change adaptively for the selected Country and Year. To deselect click on whitespace...")
 st.write("The pie chart shows classification of Sewerage Infrastructure in Basic, imited-shared, Unimproved Sanition and Open defecation. It gives over-all idea of the country's sewerage infrastructure and availability of safely managed sewerage systems. Most of the countries show significant improvement in 20 years.")
+st.subheader("***🔑 Key Insight***")
+st.write("*China's impressive development in connecting its cities to underground sewerage systems. Notice that India needs to make massive investments in improving its sewerage infrastructure. Notice that India reduces the percentage of open defecation from 74% in 2000 to 15% in 2020!*")
+
+
+
 
 
 ## PERFORMANCE OF COUNTRIES IN DELIVERING NONCONTAMINATED DRINKING WATER
@@ -365,6 +378,7 @@ WTSF = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
 ).add_selection(
     s_select_year
 ).properties(
+    title="Safely Managed and Treated Wastewater",
     width=500,
     height=250)
 ## WTOD WW Treated vs. Open Defecation
@@ -379,6 +393,7 @@ WTOD = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
 ).add_selection(
     s_select_year
 ).properties(
+    title="Wastewater Treatment vs. Open Defecation",
     width=250,
     height=250)
 ## SWC WW Treated vs. Sewer Connection 
@@ -394,6 +409,7 @@ WTSC = alt.Chart(sanitdf).mark_circle(opacity=0.9).encode(
 ).add_selection(
     s_select_year
 ).properties(
+    title="Wastewater Treatment vs. Sewerage Connectivity",
     width=250,
     height=250)
 
@@ -419,6 +435,10 @@ st.write(alt.concat(
 st.caption("Performance by Nations in Safe Collection and Disposal of Sanitary Wastewater(Interactive)")
 st.write("**Interactivity Guide:** Move the slider to and fro to visualize.")  
 st.write("Waste-water can be treated only when it is connected to a sewer system, is collected and carried to a treatment plant. The third scatter plot in this section, Treated Waste-Water vs. Sewer Connections show almost direct relation for most of the countries. The different dot sizes depict population of a country. The Slider of Years, help dynamically compare the progress of different nations over the time. For most of the countries, the parameters in all the three graphs show clear relation.")
+st.subheader("***🔑 Key Insight***")
+st.write("*These charts help us identify the countries with poor development or the ones that need drastic positive changes. In the upper chart notice that on one hand India seems to struggle in treating wastewater but also shows drastic improvement in safely managing the waterwater. The lower two charts help us understand why! Observe the lower two charts carefully, India reduces open defecation but there is almost no increase in proportional treatment of wastewater. This is primarily because India conventionally has decentralized sanitation, meaning the absence of a centralized sanitary wastewater collection and treatment infrastructure. It ensures the reduction in open defecation essentially by having in-situ septic tanks which are not connected to a centralized underground wastewater network infrastructure.*")
+
+
 
 st.markdown("***Data Source:** WHO-UNICEF JOINT MONITORING PROGRAM [Webpage](https://washdata.org/how-we-work/sdg-monitoring).*")
 st.markdown("This project was created by [Tanay Kulkarni](https://www.linkedin.com/in/tanaykulkarni/) and [Devashri Karve](https://www.linkedin.com/in/devashrikarve/) for the [Interactive Data Science](https://dig.cmu.edu/ids2022) course at [Carnegie Mellon University](https://www.cmu.edu).")
