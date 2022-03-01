@@ -51,10 +51,10 @@ This goals of this project are:
 
 ## Success Story
 
-- The app shows dynamic changes in population and many other parameters over the period of 20 years. It helps quickly understand the progress on any/all nation/s. 
-- Population histograms show steep 30% in India's Population in 20 years.
+- The app shows dynamic changes in population and many other parameters over the period of 20 years. It helps quickly understand the progress of any/all nation/s. 
+- Population histograms show steep 30% increase in India's Population in 20 years.
 - China shows massive success in improving safe management of drinking water, by increasing Pipe Network Infrastructure from 50% in 2000, to 80% in 2020.
 - India clearly needs to increase piped water connections to cater safe water to its fast growing population. Beads graph in section 2.1 clarifies why the Indian Government started heavily investing in schemes like 'Jal Jeevan Mission' (https://jaljeevanmission.gov.in/) that envisions to provide safe and adequate drinking water through individual household tap connections by 2024 to all households in rural India.
 - It is safe to assume that all the countries are progressing and improving their infrastructure. However, this project helps identify that a few counties viz. Pakistan, Nigeria, Ethiopia witnessed increase in proportion of its people having non-piped access to fairly contaminated drinking water, in 20 years.
-- China shows massive development in connecting its cities to underground sewerage systems. However, India also shows impressive progress in diminishing Open Defecation from 745 in 2000 to 15% in 2020, but not proportionate increase in Sewer Connections. On further research, we learned that India conventionally has decentralized sanitation, meaning the absence of a centralized sanitary wastewater collection and treatment infrastructure. It ensures the reduction in open defecation essentially by having in-situ septic tanks which are not connected to a centralized underground wastewater network infrastructure. 
+- China shows massive development in connecting its cities to underground sewerage systems. However, India also shows impressive progress in diminishing Open Defecation from 74% in 2000 to 15% in 2020, but not proportionate increase in Sewer Connections. On further research, we learned that India conventionally has decentralized sanitation, meaning the absence of a centralized sanitary wastewater collection and treatment infrastructure. It ensures the reduction in open defecation essentially by having in-situ septic tanks which are not connected to a centralized underground wastewater network infrastructure. 
 
