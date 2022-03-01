@@ -112,7 +112,7 @@ st.subheader("***🔑 Key Insight***")
 st.write("*Notice the steep 30% increase in India's population. Compare it with China's and USA's population over the past 20 years!*")
 
 ## PART A - CLEAN WATER
-st.header("2. Clean Water")
+st.header("2. Drinking Water")
 
 ## THE WATER CORRELATION MATRIX
 st.write("The data obtained has 10 different parameters [Link to Variable Dictionary](https://raw.githubusercontent.com/CMU-IDS-2022/assignment-2-dtk2/f367084a4fef6684455252465e3bd7f6e9ae9a67/Dictionary%20-%20water.csv). To visualize the correlation (connection) between these parameters, a correlation matrix is plotted. Many parameters show strong correlation among themselves.")
