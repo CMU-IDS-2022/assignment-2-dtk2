@@ -42,11 +42,11 @@ This goals of this project are:
 - We tried sketching and drawing different types of graphs, histograms, pie charts, scatter plots of different data parameters and arrived on a few, which are presented in the app. 
 - We both were involved in sketching, data cleaning (using Python), in developing the code and the write-up. It helped us support each other as well as learn many new things together. 
 - Overall, this assignment took 20 man-hours each. Total of 40 man-hours.
-  Data Collection - 3 hrs
-  Data cleaning - 5 hrs
-  Sketching - 4 hrs
-  Developing the app - 25 hrs
-  Write-up - 3
+  - Data Collection - 3 hrs
+  - Data cleaning - 5 hrs
+  - Sketching - 4 hrs
+  - Developing the app - 25 hrs
+  - Write-up - 3
 - Out of numerous coding challanges, deploying the app on streamlit and generating the results on it took comparitively more time. Especially, deploying **Slider** was a lengthy process as we encountered most challanges in it. The Year data/graphs did not show for the sliders in streamlit. Eventually, we leaned that the slider needs 'float' type data, and not 'integer'.
 
 ## Success Story
