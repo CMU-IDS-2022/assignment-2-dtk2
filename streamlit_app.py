@@ -106,8 +106,9 @@ popgrowth= alt.concat(
 )
 st.altair_chart(popgrowth, use_container_width=True)
 st.caption("Growth in World's Population over Time (2000-2020) (Interactive)")
-st.write("The world population grew exponentially from around 6 Billion in 2000 to about 8 Billion by 2020! This steep rise in population put great stress on the world economies to ensuring clean potable drinking water and safe sanitation to each and every human being on the planet. Population is an important and consistently growing parameter on which, developement of any nation largely depends. This section shows a pair of histograms depicting population growth in different countries and different SDG Regions in the the world between from the year 2000 to 2020. ")
 st.write("**Interactivity Guide:** Move the slider, hover on the bars to view more details...")
+st.write("The world population grew exponentially from around 6 Billion in 2000 to about 8 Billion by 2020! This steep rise in population put great stress on the world economies to ensuring clean potable drinking water and safe sanitation to each and every human being on the planet. Population is an important and consistently growing parameter on which, developement of any nation largely depends. This section shows a pair of histograms depicting population growth in different countries and different SDG Regions in the the world between from the year 2000 to 2020. ")
+
 st.subheader("***🔑 Key Insight***")
 st.write("*Notice the steep 30% increase in India's population. Compare it with China's and USA's population over the past 20 years!*")
 
