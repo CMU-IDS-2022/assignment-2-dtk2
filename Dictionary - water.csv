@@ -1,0 +1,17 @@
+Variable Name,Meaning
+COUNTRY,Country Name
+C_CODE,Country Code
+YEAR,Year
+POP_THOUS,Population in Thousands
+PC_POP_URB,Percent Urban Population
+BASIC_WAT_NAT,Proportion of Population having Basic Water Supply 
+LIMITED_WAT_NAT,Proportion of Population having Limited (Less than 30 min) Water Supply 
+UNIMPROVED_WAT_NAT,Proportion of Population having Unimproved Water Supply 
+SURFACE_WAT_NAT,Proportion of Population having Surface Source Water Supply 
+SAFELY_MANAGED_NAT,Proportion of Population having Safely Managed Water Supply 
+ACCESS_ONPREMISE_NAT,Proportion of Population having Access to Water Supply on Premise 
+AVAIL_WHEN_NEEDED_NAT, Proportion of Population having Water Available when Needed
+NON_CONTAMIN_NAT,Proportion of Population having Non-Contaminated Water Supply
+PIPED_NAT,Proportion of Population having Piped Water Supply 
+NONPIPED_NAT,Proportion of Population having Non-Piped Water Supply
+SDG region,SDG Region

@@ -1,0 +1,17 @@
+COUNTRY,Country Name
+C_CODE,Country Code
+YEAR,Year
+POP_THOUS,Population in Thousands
+PC_POP_URB,Percent Urban Population
+BASIC_SAN_NAT,Proportion of Population having access to Basic Sanitary Infrastructure
+LIMITED_SHARED_SAN_NAT,Proportion of Population having access to Limited Shared Sanitary Infrastructure
+UNIMPROVED_SAN_NAT,Proportion of Population having access to Unimproved Sanitary Infrastructure
+OPENDEFECATION_SAN_NAT,Proportion of Population Defecating in the Open
+SAFELYMANAGED_SAN_NAT,Proportion of Population having access to Safely Managed Sanitary Infrastructure
+DISPOSED_INSITU_SAN_NAT,Proportion of Population having access to In-situ Disposal of Sanitary Infrastructure
+EMP_TREAT_SAN_NAT,Proportion of Population having access to Emptied and Treated Sanitary Infrastructure
+WW_TREATED_SAN_NAT,Proportion of Population having access to Watse-water Treatment Infrastructure
+LATRINES_SAN_NAT,Proportion of Population having access to Latrines Sanitary Infrastructure
+SEPTICTANKS_SAN_NAT,Proportion of Population having access to Septic Tanks Sanitary Infrastructure
+SEWERCONNECTION_SAN_NAT,Proportion of Population having access to Sanitary Infrastructure with Sewer Connection
+SDG region,SDG Region
